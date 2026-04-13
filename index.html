@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass — Purpose-Driven Recovery + Accountability</title>
+  <meta name="description" content="Recovery that actually sticks. Compass helps you remember why." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#for-physios">For Physios</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="#signup" class="btn btn-nav">Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="signup">
+
+      <!-- Logo card -->
+      <div class="logo-card">
+        <div class="logo-rule">
+          <span class="rule-line"></span>
+          <span class="rule-dot"></span>
+          <span class="rule-dot rule-dot--center"></span>
+          <span class="rule-dot"></span>
+          <span class="rule-line"></span>
+        </div>
+        <div class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="14" cy="14" r="13" stroke="#2d6e72" stroke-width="1.5"/>
+            <line x1="14" y1="4" x2="14" y2="24" stroke="#2d6e72" stroke-width="1.5"/>
+            <line x1="4" y1="14" x2="24" y2="14" stroke="#2d6e72" stroke-width="1.5"/>
+            <line x1="7.5" y1="7.5" x2="20.5" y2="20.5" stroke="#2d6e72" stroke-width="1" stroke-dasharray="2 2"/>
+            <circle cx="14" cy="14" r="2.5" fill="#2d6e72"/>
+          </svg>
+          <span class="logo-text">COMPASS</span>
+        </div>
+        <p class="logo-tagline">Purpose-Driven Recovery<br/>+ Accountability</p>
+      </div>
+
+      <!-- Headline -->
+      <h1>Recovery that actually sticks.</h1>
+      <p class="sub">Compass helps you remember why.</p>
+
+      <!-- Email signup form -->
+      <form
+        class="signup-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        id="email-form"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="btn btn-primary">
+          Get Early Access &rarr;
+        </button>
+      </form>
+      <p class="fine-print">No spam. Unsubscribe any time.</p>
+
+      <!-- Success message (shown via JS after submit) -->
+      <div class="success-msg" id="success-msg" hidden>
+        <span>&#10003;</span> You're on the list — we'll be in touch!
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-main">
+      COMPASS &middot; Purpose-Driven Recovery + Accountability &middot; Mindset Lab, EMBA 8025 &middot; April 2026
+    </p>
+    <p class="footer-sub">Not a real product launch. Created as part of an innovation course project.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('email-form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          form.hidden = true;
+          successMsg.hidden = false;
+        } else {
+          const json = await res.json();
+          alert(json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
+        }
+      } catch {
+        alert('Network error. Please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
