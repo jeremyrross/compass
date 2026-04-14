@@ -121,35 +121,12 @@ main {
 /* ── LOGO ── */
 .logo { margin-bottom: 44px; }
 
-.logo-wordmark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
-.logo-letter {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 900;
-  font-size: 2.8rem;
-  letter-spacing: 0.06em;
-  color: var(--teal);
-  line-height: 1;
-}
-
-.logo-compass-o {
-  width: 40px;
-  height: 40px;
-  margin: 0 2px;
-  flex-shrink: 0;
-}
-
-.logo-tagline {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.03em;
+.logo-img {
+  width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
 }
 
 /* ── HEADLINE ── */
