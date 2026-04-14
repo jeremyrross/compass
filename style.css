@@ -118,14 +118,12 @@ main {
   align-items: center;
 }
 
-/* ── LOGO ── */
-.logo { margin-bottom: 44px; }
-
-.logo-img {
-  width: 220px;
-  height: auto;
+/* ── NAV LOGO ── */
+.nav-logo {
+  height: 36px;
+  width: auto;
   display: block;
-  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 /* ── HEADLINE ── */
