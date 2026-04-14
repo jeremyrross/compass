@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compass — Purpose-Driven Recovery + Accountability</title>
-  <meta name="description" content="Heal faster by remembering what you're healing for." />
+  <meta name="description" content="Heal faster by remembering why you're healing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -16,10 +16,10 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-links">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#for-physios">For Physios</a>
-        <a href="#research">Research</a>
-        <a href="#about">About</a>
+        <a href="#">How It Works</a>
+        <a href="#">For Physios</a>
+        <a href="#">Research</a>
+        <a href="#">About</a>
       </div>
       <a href="#signup" class="btn btn-nav">Get Early Access</a>
     </div>
@@ -30,17 +30,17 @@
     <div class="hero-overlay"></div>
     <section class="hero">
 
-      <!-- Logo — no card, just the wordmark -->
+      <!-- Logo -->
       <div class="logo">
         <div class="logo-wordmark">
           <span class="logo-letter">C</span>
           <svg class="logo-compass-o" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="28" cy="28" r="25" fill="none" stroke="#3a5570" stroke-width="2.4"/>
+            <circle cx="28" cy="28" r="25" fill="none" stroke="#fff" stroke-width="2.4"/>
             <g transform="translate(28,28) rotate(40)">
-              <polygon points="0,-17 3.5,-5 0,-9 -3.5,-5" fill="#3a5570"/>
-              <polygon points="0,17 3.5,5 0,9 -3.5,5" fill="#3a5570" opacity="0.3"/>
+              <polygon points="0,-17 3.5,-5 0,-9 -3.5,-5" fill="#fff"/>
+              <polygon points="0,17 3.5,5 0,9 -3.5,5" fill="#fff" opacity="0.4"/>
             </g>
-            <circle cx="28" cy="28" r="2.5" fill="#3a5570"/>
+            <circle cx="28" cy="28" r="2.5" fill="#fff"/>
           </svg>
           <span class="logo-letter">MPASS</span>
         </div>
@@ -48,7 +48,7 @@
       </div>
 
       <!-- Headline -->
-      <h1>Heal faster by remembering<br/>what you're healing for.</h1>
+      <h1>Heal faster by remembering<br/>why you're healing.</h1>
       <p class="sub">Compass anchors your recovery to your personal why — so you show up, even on hard days.</p>
 
       <!-- Email signup -->
@@ -89,28 +89,15 @@
   <script>
     const form = document.getElementById('email-form');
     const successMsg = document.getElementById('success-msg');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
       try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { Accept: 'application/json' },
-        });
-        if (res.ok) {
-          form.hidden = true;
-          successMsg.hidden = false;
-        } else {
-          const json = await res.json();
-          alert(json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
-        }
-      } catch {
-        alert('Network error. Please try again.');
-      }
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        if (res.ok) { form.hidden = true; successMsg.hidden = false; }
+        else { const j = await res.json(); alert(j.errors ? j.errors.map(e => e.message).join(', ') : 'Something went wrong.'); }
+      } catch { alert('Network error. Please try again.'); }
     });
-
     window.addEventListener('scroll', () => {
       document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 10);
     });
