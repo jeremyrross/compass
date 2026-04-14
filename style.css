@@ -4,9 +4,8 @@
   --teal: #3a5570;
   --gold: #c9a543;
   --gold-dark: #b08e30;
-  --text-light: rgba(255,255,255,0.95);
-  --text-muted: rgba(255,255,255,0.7);
-  --border: rgba(255,255,255,0.25);
+  --text-dark: #1e2d3d;
+  --text-muted: #5a6e7f;
 }
 
 html { scroll-behavior: smooth; }
@@ -45,10 +44,10 @@ nav.scrolled {
 .nav-links { display: flex; gap: 36px; }
 .nav-links a {
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.92rem;
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 0.75;
   transition: opacity 0.15s;
 }
 .nav-links a:hover { opacity: 1; }
@@ -66,13 +65,12 @@ nav.scrolled {
   transition: background 0.15s, transform 0.1s;
 }
 .btn-nav {
-  background: rgba(255,255,255,0.15);
+  background: var(--teal);
   color: #fff;
   font-size: 0.88rem;
   padding: 8px 18px;
-  border: 1px solid rgba(255,255,255,0.35);
 }
-.btn-nav:hover { background: rgba(255,255,255,0.25); }
+.btn-nav:hover { background: #2c4158; }
 
 .btn-primary {
   background: var(--gold);
@@ -100,16 +98,11 @@ main {
     center center / cover no-repeat;
 }
 
-/* Dark overlay — subtle, just enough for readability */
+/* Light overlay — washes the photo back so text reads dark over it */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(15,28,42,0.52) 0%,
-    rgba(15,28,42,0.38) 50%,
-    rgba(15,28,42,0.55) 100%
-  );
+  background: rgba(245,243,239,0.82);
   pointer-events: none;
 }
 
@@ -141,7 +134,7 @@ main {
   font-weight: 900;
   font-size: 2.8rem;
   letter-spacing: 0.06em;
-  color: #fff;
+  color: var(--teal);
   line-height: 1;
 }
 
@@ -165,7 +158,7 @@ h1 {
   font-size: clamp(2rem, 5vw, 2.9rem);
   font-weight: 900;
   line-height: 1.2;
-  color: #fff;
+  color: var(--text-dark);
   margin-bottom: 16px;
 }
 
@@ -205,6 +198,7 @@ h1 {
 .fine-print {
   font-size: 0.8rem;
   color: var(--text-muted);
+  opacity: 0.8;
 }
 
 .success-msg {
