@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d6e4ee"/>
+      <stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1440" height="560" fill="url(#sky)"/>
+
+  <!-- Sun glow -->
+  <circle cx="1100" cy="120" r="60" fill="#f5e9c8" opacity="0.6"/>
+  <circle cx="1100" cy="120" r="40" fill="#f0d98a" opacity="0.5"/>
+
+  <!-- Distant mountains (lightest) -->
+  <path d="M0,400 L180,290 L320,360 L500,250 L680,330 L840,220 L1000,300 L1160,200 L1320,280 L1440,230 L1440,560 L0,560Z" fill="#b8ccd8"/>
+
+  <!-- Mid mountains -->
+  <path d="M0,440 L140,340 L300,410 L460,300 L620,370 L760,270 L900,340 L1060,250 L1200,320 L1340,245 L1440,290 L1440,560 L0,560Z" fill="#7a9db5"/>
+
+  <!-- Main peaks -->
+  <!-- Left peak -->
+  <path d="M0,480 L100,390 L200,460 L320,350 L440,430 L520,560 L0,560Z" fill="#4a6e88"/>
+
+  <!-- Central hero peak (tallest) -->
+  <path d="M580,560 L680,350 L720,290 L760,350 L860,560Z" fill="#3a5570"/>
+  <!-- Snow cap -->
+  <path d="M720,290 L705,335 L720,325 L735,335Z" fill="#e8e4dc"/>
+
+  <!-- Right peaks -->
+  <path d="M820,560 L920,370 L980,430 L1060,340 L1140,420 L1220,360 L1320,440 L1440,380 L1440,560Z" fill="#4a6e88"/>
+
+  <!-- Foreground slope / trail -->
+  <path d="M580,560 L650,480 L700,440 L720,420 L740,440 L790,480 L860,560Z" fill="#2c4158"/>
+  <!-- Trail line up the mountain -->
+  <path d="M660,490 Q695,450 720,420" stroke="#c9a543" stroke-width="2" fill="none" stroke-dasharray="6,4" opacity="0.7"/>
+
+  <!-- Hiker silhouette near the peak -->
+  <g transform="translate(708, 400)">
+    <!-- Body -->
+    <rect x="-3" y="0" width="6" height="12" rx="2" fill="#1e2d3d"/>
+    <!-- Head -->
+    <circle cx="0" cy="-5" r="4.5" fill="#1e2d3d"/>
+    <!-- Backpack -->
+    <rect x="2" y="1" width="5" height="7" rx="1.5" fill="#1e2d3d"/>
+    <!-- Legs (hiking stride) -->
+    <line x1="-2" y1="12" x2="-5" y2="20" stroke="#1e2d3d" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="2" y1="12" x2="4" y2="20" stroke="#1e2d3d" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Arms -->
+    <line x1="-3" y1="3" x2="-7" y2="9" stroke="#1e2d3d" stroke-width="2" stroke-linecap="round"/>
+    <line x1="3" y1="3" x2="5" y2="8" stroke="#1e2d3d" stroke-width="2" stroke-linecap="round"/>
+    <!-- Trekking pole -->
+    <line x1="-7" y1="9" x2="-10" y2="20" stroke="#1e2d3d" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Foreground trees (left) -->
+  <g fill="#2c4158">
+    <polygon points="80,520 92,480 104,520"/>
+    <polygon points="88,530 104,482 120,530"/>
+    <polygon points="50,530 62,495 74,530"/>
+  </g>
+
+  <!-- Foreground trees (right) -->
+  <g fill="#2c4158">
+    <polygon points="1300,510 1312,470 1324,510"/>
+    <polygon points="1320,525 1336,478 1352,525"/>
+    <polygon points="1360,515 1374,480 1388,515"/>
+  </g>
+
+  <!-- Ground / base -->
+  <path d="M0,530 Q360,510 720,520 Q1080,530 1440,515 L1440,560 L0,560Z" fill="#2c4158"/>
+</svg>
