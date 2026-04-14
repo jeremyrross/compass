@@ -38,22 +38,34 @@
           <span class="rule-dot"></span>
           <span class="rule-line"></span>
         </div>
-        <div class="logo-mark">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="14" cy="14" r="13" stroke="#2d6e72" stroke-width="1.5"/>
-            <line x1="14" y1="4" x2="14" y2="24" stroke="#2d6e72" stroke-width="1.5"/>
-            <line x1="4" y1="14" x2="24" y2="14" stroke="#2d6e72" stroke-width="1.5"/>
-            <line x1="7.5" y1="7.5" x2="20.5" y2="20.5" stroke="#2d6e72" stroke-width="1" stroke-dasharray="2 2"/>
-            <circle cx="14" cy="14" r="2.5" fill="#2d6e72"/>
-          </svg>
-          <span class="logo-text">COMPASS</span>
-        </div>
+
+        <!-- Inline SVG logo: C[compass-O]MPASS -->
+        <svg class="logo-svg" viewBox="0 0 320 64" xmlns="http://www.w3.org/2000/svg" aria-label="Compass">
+          <!-- "C" -->
+          <text x="0" y="52" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="56" letter-spacing="4" fill="#2c4a52">C</text>
+          <!-- Compass circle replacing "O" -->
+          <g transform="translate(52, 4)">
+            <!-- Outer ring -->
+            <circle cx="28" cy="28" r="26" fill="none" stroke="#2c4a52" stroke-width="2.5"/>
+            <!-- Inner ring -->
+            <circle cx="28" cy="28" r="18" fill="none" stroke="#2c4a52" stroke-width="1.2"/>
+            <!-- Compass needle — dark upper-left point -->
+            <polygon points="28,10 34,28 28,24 22,28" fill="#2c4a52"/>
+            <!-- Compass needle — light lower-right point -->
+            <polygon points="28,46 22,28 28,32 34,28" fill="#7aa8ae"/>
+            <!-- Center dot -->
+            <circle cx="28" cy="28" r="3" fill="#2c4a52"/>
+          </g>
+          <!-- "MPASS" -->
+          <text x="118" y="52" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="56" letter-spacing="4" fill="#2c4a52">MPASS</text>
+        </svg>
+
         <p class="logo-tagline">Purpose-Driven Recovery<br/>+ Accountability</p>
       </div>
 
       <!-- Headline -->
-      <h1>Recovery that actually sticks.</h1>
-      <p class="sub">Compass helps you remember why.</p>
+      <h1>You know the exercises.<br/>You're just not doing them.</h1>
+      <p class="sub">Compass connects your recovery to your personal why — so you actually follow through.</p>
 
       <!-- Email signup form -->
       <form
