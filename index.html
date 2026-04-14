@@ -71,6 +71,15 @@
   </footer>
 
   <script>
+    // Hide nav on scroll down, show on scroll up
+    let lastScroll = 0;
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      nav.classList.toggle('hidden', current > lastScroll && current > 60);
+      lastScroll = current;
+    });
+
     const form = document.getElementById('email-form');
     const successMsg = document.getElementById('success-msg');
     form.addEventListener('submit', async (e) => {
