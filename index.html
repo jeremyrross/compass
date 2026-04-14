@@ -37,27 +37,29 @@
 
       <!-- Email signup -->
       <form
-        class="signup-form"
+        class="signup-form-wrap"
         action="https://formspree.io/f/mnjlqwdp"
         method="POST"
         id="email-form"
       >
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          required
-          autocomplete="email"
-        />
-        <button type="submit" class="btn btn-primary">
-          Get Early Access &rarr;
-        </button>
+        <div class="signup-form">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="btn btn-primary">
+            Get Early Access &rarr;
+          </button>
+        </div>
+        <label class="consent-label">
+          <input type="checkbox" id="consent" required />
+          <span>I agree to the <a href="/privacy" target="_blank">Privacy Policy</a> and consent to receiving updates from Compass.</span>
+        </label>
+        <p class="fine-print">No spam. Unsubscribe any time.</p>
       </form>
-      <label class="consent-label">
-        <input type="checkbox" id="consent" required />
-        <span>I agree to the <a href="/privacy" target="_blank">Privacy Policy</a> and consent to receiving updates from Compass.</span>
-      </label>
-      <p class="fine-print">No spam. Unsubscribe any time.</p>
 
       <div class="success-msg" id="success-msg" hidden>
         <span>&#10003;</span> You're on the list — we'll be in touch!
